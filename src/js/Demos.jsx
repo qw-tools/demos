@@ -37,6 +37,7 @@ const columnDefs = [
     flex: 1,
     minWidth: 180,
     maxWidth: 180,
+    initialSort: "desc",
     valueGetter: (params) => {
       return params.data.time
         .substring(0, "yyyy-mm-dd hh:ii".length)
@@ -47,7 +48,7 @@ const columnDefs = [
     field: "qtv_address",
     headerName: "QTV",
     flex: 1,
-    minWidth: 180,
+    minWidth: 120,
     maxWidth: 180,
     cellRenderer: (params) => {
       return (
@@ -60,7 +61,7 @@ const columnDefs = [
   {
     field: "filename",
     flex: 1,
-    minWidth: 480,
+    minWidth: 280,
     maxWidth: 480,
     cellRenderer: (params) => {
       return <a href={`${params.data.download_url}`}>{params.value}</a>;
@@ -71,14 +72,16 @@ const columnDefs = [
     field: "participants",
     headerName: "Players / Teams",
     flex: 1,
+    minWidth: 280,
     maxWidth: 280,
   },
-  { field: "map", flex: 1, minWidth: 180, maxWidth: 180 },
+  { field: "map", flex: 1, minWidth: 80, maxWidth: 180 },
 ];
 
 const gridOptions = {
   enableCellTextSelection: true,
   ensureDomOrder: true,
+
 };
 
 export const Demos = () => {
