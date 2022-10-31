@@ -104,6 +104,7 @@ export const Demos = () => {
         rowData={modifiedData}
         defaultColDef={defaultColDef}
         columnDefs={columnDefs}
+        rowHeight={36}
       ></AgGridReact>
     </div>
   );
