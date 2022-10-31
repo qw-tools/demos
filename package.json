@@ -1,0 +1,33 @@
+{
+  "name": "qw-demos",
+  "version": "0.1.0",
+  "description": "QuakeWorld servers overview",
+  "author": "Viktor Persson",
+  "license": "MIT",
+  "repository": "vikpe/qw-demos",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build --base=https://vikpe.org/qw-demos/",
+    "preview": "vite preview",
+    "lint": "yarn prettier --write src/js"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.24",
+    "@types/react-dom": "^18.0.8",
+    "prettier": "^2.7.1"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^4.13.5",
+    "@vitejs/plugin-react": "^2.2.0",
+    "ag-grid-community": "^28.2.0",
+    "ag-grid-react": "^28.2.0",
+    "copy-text-to-clipboard": "^3.0.1",
+    "lodash.pick": "^4.4.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sass": "^1.55.0",
+    "timeago.js": "^4.0.2",
+    "vite": "^3.2.2"
+  }
+}
