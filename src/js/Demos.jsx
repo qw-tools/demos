@@ -64,7 +64,7 @@ const columnDefs = [
     minWidth: 280,
     maxWidth: 480,
     cellRenderer: (params) => {
-      return <a href={`${params.data.download_url}`}>{params.value}</a>;
+      return <a href={`${params.data.download_url}`} title={params.data.download_url}>{params.value}</a>;
     },
   },
   { field: "mode", flex: 1, minWidth: 120, maxWidth: 120 },
