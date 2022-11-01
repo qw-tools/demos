@@ -84,6 +84,34 @@ const gridOptions = {
 
 };
 
+const applyQueryParams = event => {
+  if (0 === window.location.search.length) {
+    return
+  }
+
+  const params = new Proxy(new URLSearchParams(window.location.search), {
+    get: (searchParams, prop) => searchParams.get(prop),
+  });
+
+  const filters = ["qtv_address", "filename", "mode", "participants", "map"];
+  let hasChangedFilters = false;
+
+  filters.forEach(key => {
+    if (params[key]) {
+      const filterInstance = event.api.getFilterInstance(key);
+      filterInstance.setModel({
+        type: "text",
+        filter: params[key],
+      });
+      hasChangedFilters = true;
+    }
+  });
+
+  if (hasChangedFilters) {
+    event.api.onFilterChanged();
+  }
+}
+
 export const Demos = () => {
   const query = useQuery(["demos"], () =>
     fetchGet("https://hubapi.quakeworld.nu/v2/demos")
@@ -105,6 +133,7 @@ export const Demos = () => {
         defaultColDef={defaultColDef}
         columnDefs={columnDefs}
         rowHeight={36}
+        onFirstDataRendered={applyQueryParams}
       ></AgGridReact>
     </div>
   );
