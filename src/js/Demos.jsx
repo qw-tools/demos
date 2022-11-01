@@ -86,7 +86,7 @@ const gridOptions = {
 
 export const Demos = () => {
   const query = useQuery(["demos"], () =>
-    fetchGet("https://hubapi.quakeworld.nu/v2/demos?limit=500")
+    fetchGet("https://hubapi.quakeworld.nu/v2/demos")
   );
 
   if (!query.data) {
