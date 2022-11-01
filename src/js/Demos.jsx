@@ -90,7 +90,7 @@ export const Demos = () => {
   );
 
   if (!query.data) {
-    return null;
+    return <div className="app-loading">loading demos..</div>;
   }
 
   const modifiedData = query.data.map((d) => {

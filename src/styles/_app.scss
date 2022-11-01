@@ -8,3 +8,12 @@
 .app-body {
   flex-grow: 1;
 }
+
+.app-loading {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 32px;
+}
