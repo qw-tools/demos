@@ -7,3 +7,16 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <App />
   </React.StrictMode>
 );
+
+if (import.meta.env.PROD) {
+  console.log(`
+██████╗ ███████╗███╗   ███╗ ██████╗ ███████╗
+██╔══██╗██╔════╝████╗ ████║██╔═══██╗██╔════╝
+██║  ██║█████╗  ██╔████╔██║██║   ██║███████╗
+██║  ██║██╔══╝  ██║╚██╔╝██║██║   ██║╚════██║
+██████╔╝███████╗██║ ╚═╝ ██║╚██████╔╝███████║
+╚═════╝ ╚══════╝╚═╝     ╚═╝ ╚═════╝ ╚══════╝
+
+source code: https://github.com/vikpe/qw-demos
+`);
+}
