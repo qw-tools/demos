@@ -76,7 +76,7 @@ const columnDefs = [
           >
             {params.value}
           </a>{" "}
-          <span style={{ marginLeft: 10 }}>
+          <span style={{ float: "right" }}>
             (
             <a
               href={`qw://file:${params.data.filename}@${params.data.qtv_address}/qtvplay`}
