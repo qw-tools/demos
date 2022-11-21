@@ -1,6 +1,10 @@
 import React from "react";
 import { AgGridReact } from "ag-grid-react";
-import { QueryClient, QueryClientProvider, useQuery, } from "@tanstack/react-query";
+import {
+  QueryClient,
+  QueryClientProvider,
+  useQuery,
+} from "@tanstack/react-query";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -64,7 +68,26 @@ const columnDefs = [
     minWidth: 280,
     maxWidth: 480,
     cellRenderer: (params) => {
-      return <a href={`${params.data.download_url}`} title={params.data.download_url}>{params.value}</a>;
+      return (
+        <>
+          <a
+            href={`${params.data.download_url}`}
+            title={params.data.download_url}
+          >
+            {params.value}
+          </a>{" "}
+          <span style={{ marginLeft: 10 }}>
+            (
+            <a
+              href={`qw://file:${params.data.filename}@${params.data.qtv_address}/qtvplay`}
+              title="Stream demo from QTV using ezQuake"
+            >
+              stream
+            </a>
+            )
+          </span>
+        </>
+      );
     },
   },
   { field: "mode", flex: 1, minWidth: 120, maxWidth: 120 },
@@ -81,12 +104,11 @@ const columnDefs = [
 const gridOptions = {
   enableCellTextSelection: true,
   ensureDomOrder: true,
-
 };
 
-const applyQueryParams = event => {
+const applyQueryParams = (event) => {
   if (0 === window.location.search.length) {
-    return
+    return;
   }
 
   const params = new Proxy(new URLSearchParams(window.location.search), {
@@ -96,7 +118,7 @@ const applyQueryParams = event => {
   const filters = ["qtv_address", "filename", "mode", "participants", "map"];
   let hasChangedFilters = false;
 
-  filters.forEach(key => {
+  filters.forEach((key) => {
     if (params[key]) {
       const filterInstance = event.api.getFilterInstance(key);
       filterInstance.setModel({
@@ -110,7 +132,7 @@ const applyQueryParams = event => {
   if (hasChangedFilters) {
     event.api.onFilterChanged();
   }
-}
+};
 
 export const Demos = () => {
   const query = useQuery(["demos"], () =>
