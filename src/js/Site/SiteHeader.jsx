@@ -11,7 +11,7 @@ export function SiteHeader() {
           >
             QuakeWorld Tools
           </a>
-          <div className="text-gray-400 mr-6">Demos</div>
+          <div className="text-gray-400 mr-6 font-mono">Demos</div>
           {pages.map((page) => (
             <a
               key={page.url}
