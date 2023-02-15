@@ -7,7 +7,7 @@ export function SiteHeader() {
         <div className="flex items-center h-12">
           <a
             href="https://tools.quake.world/"
-            className="px-2 hover:text-sky-200"
+            className="px-2 hover:text-yellow-200"
           >
             QuakeWorld Tools
           </a>
@@ -16,7 +16,7 @@ export function SiteHeader() {
             <a
               key={page.url}
               href={page.url}
-              className="flex px-2 h-full items-center hover:text-white hover:opacity-100 transition-colors font-bold text-green-300 opacity-100"
+              className="flex px-2 h-full items-center hover:text-white hover:opacity-100 font-bold text-green-300 opacity-100"
             >
               {page.title}
             </a>
