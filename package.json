@@ -1,33 +1,35 @@
 {
-  "name": "qw-demos",
+  "name": "recent-demos",
   "version": "0.1.0",
-  "description": "QuakeWorld servers overview",
+  "description": "List of recent demos from popular QuakeWorld servers.",
   "author": "Viktor Persson",
   "license": "MIT",
-  "repository": "vikpe/qw-demos",
+  "repository": "qw-tools/recent-demos",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build --base=https://tools.quake.world/recent-demos/",
     "preview": "vite preview",
-    "lint": "yarn prettier --write src/js"
+    "format": "yarn prettier --write src/js"
   },
   "devDependencies": {
-    "@types/react": "^18.0.25",
-    "@types/react-dom": "^18.0.9",
-    "prettier": "^2.7.1"
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "autoprefixer": "^10.4.13",
+    "prettier": "^2.8.4",
+    "tailwindcss": "^3.2.6"
   },
   "dependencies": {
-    "@tanstack/react-query": "^4.16.1",
-    "@vitejs/plugin-react": "^2.2.0",
-    "ag-grid-community": "^28.2.1",
-    "ag-grid-react": "^28.2.1",
+    "@tanstack/react-query": "^4.24.6",
+    "@vitejs/plugin-react": "^3.1.0",
+    "ag-grid-community": "^29.0.0",
+    "ag-grid-react": "^29.0.0",
     "copy-text-to-clipboard": "^3.0.1",
     "lodash.pick": "^4.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sass": "^1.56.1",
+    "sass": "^1.58.1",
     "timeago.js": "^4.0.2",
-    "vite": "^3.2.4"
+    "vite": "^4.1.1"
   }
 }

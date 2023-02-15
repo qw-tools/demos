@@ -1,2 +1,2 @@
-# qw-demos
-Demos scraped from popular servers.
+# Recent Demos
+> Recent demos from popular QuakeWorld servers

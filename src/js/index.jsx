@@ -17,6 +17,6 @@ if (import.meta.env.PROD) {
 ██████╔╝███████╗██║ ╚═╝ ██║╚██████╔╝███████║
 ╚═════╝ ╚══════╝╚═╝     ╚═╝ ╚═════╝ ╚══════╝
 
-source code: https://github.com/vikpe/qw-demos
+source code: https://github.com/qw-tools/demos
 `);
 }

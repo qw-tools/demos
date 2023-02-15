@@ -20,10 +20,10 @@ const fetchGet = async (url) => {
   return response.json();
 };
 
-export const DemosPage = () => {
+export const RecentDemosPage = () => {
   return (
     <QueryClientProvider client={queryClient}>
-      <Demos />
+      <RecentDemos />
     </QueryClientProvider>
   );
 };
@@ -56,7 +56,7 @@ const columnDefs = [
     maxWidth: 180,
     cellRenderer: (params) => {
       return (
-        <a href={`http://${params.value}/demos/`}>
+        <a href={`http://${params.value}/demos/`} className="text-sky-800">
           {params.value.replace(":28000", "")}
         </a>
       );
@@ -73,6 +73,7 @@ const columnDefs = [
           <a
             href={`${params.data.download_url}`}
             title={params.data.download_url}
+            className="text-sky-600"
           >
             {params.value}
           </a>{" "}
@@ -81,6 +82,7 @@ const columnDefs = [
             <a
               href={`qw://file:${params.data.filename}@${params.data.qtv_address}/qtvplay`}
               title="Stream demo from QTV using ezQuake"
+              className="text-sky-800"
             >
               stream
             </a>
@@ -134,13 +136,17 @@ const applyQueryParams = (event) => {
   }
 };
 
-export const Demos = () => {
+export const RecentDemos = () => {
   const query = useQuery(["demos"], () =>
     fetchGet("https://hubapi.quakeworld.nu/v2/demos")
   );
 
   if (!query.data) {
-    return <div className="app-loading">loading demos..</div>;
+    return (
+      <div className="flex items-center h-full justify-center">
+        loading demos..
+      </div>
+    );
   }
 
   const modifiedData = query.data.map((d) => {

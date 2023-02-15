@@ -1,4 +1,11 @@
-@import "normalize";
+@import "tailwind";
 @import "ag-grid-community/styles/ag-grid.css";
 @import "ag-grid-community/styles/ag-theme-alpine.css";
-@import "app";
+
+.debug {
+  border: 6px solid green;
+
+  > * {
+    border: 2px solid red;
+  }
+}
