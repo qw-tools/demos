@@ -1,17 +1,14 @@
 export function SiteFooter() {
   return (
-    <div className="container text-xs">
-      <div className="flex items-center h-10">
-        <div>
-          &copy;
-          <a href="https://tools.quake.world" className="text-sky-600">QuakeWorld Tools</a> - Created
-          by <a className="text-sky-600" href="https://vikpe.org">vikpe</a>
-        </div>
-        <span className="text-gray-300 mx-2">|</span>
-        <a
-          href="https://github.com/qw-tools/recent-demos"
-          className="text-sky-600"
-        >
+    <div className="container">
+      <div className="flex h-10 items-center justify-center text-xs space-x-2">
+        <span>
+          Created by
+          <a className="text-sky-600" href="https://vikpe.org">vikpe</a> a.k.a.
+          "XantoM&quot;
+        </span>
+        <span className="text-gray-400">|</span>
+        <a className="text-sky-600" href="https://github.com/qw-tools/charset">
           Source on GitHub &#8599;
         </a>
       </div>
